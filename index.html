@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+</head>
+<body>
+  <header>
+    <h1>Personal Finance Tracker</h1>
+    <button class="settings-button" onclick="toggleSettings()">⚙️ Settings</button>
+  </header>
+
+  <main>
+    <div class="top-section">
+      <section class="form-container" id="transaction-form">
+        <h2>Add Transaction</h2>
+        <form id="form">
+          <input type="text" id="description" placeholder="Description" required />
+          <input type="number" id="amount" placeholder="Amount" required />
+          <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+          </select>
+          <select id="category">
+            <option value="Paycheck">Paycheck</option>
+            <option value="Gift">Gift</option>
+          </select>
+          <input type="date" id="date" required />
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="chart-container">
+        <h2>Expense Distribution</h2>
+        <canvas id="expenseChart" width="280" height="280"></canvas>
+      </section>
+    </div>
+
+    <section id="summary">
+      <h2>Summary</h2>
+      <div id="total-income">Total Income: £0</div>
+      <div id="total-expenses">Total Expenses: £0</div>
+      <div id="balance">Balance: £0</div>
+    </section>
+
+    <section id="transactions">
+      <h2>Transactions</h2>
+      <ul id="transaction-list"></ul>
+    </section>
+
+    <section id="budget-overview">
+      <h2>Budget Overview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Budget</th>
+            <th>Spent</th>
+            <th>Remaining</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="budget-table-body"></tbody>
+      </table>
+    </section>
+
+    <section id="settings-page">
+      <h2>Settings</h2>
+      <div>
+        <label for="starting-balance">Set Starting Balance:</label>
+        <input type="number" id="starting-balance" placeholder="Enter starting balance" />
+        <button onclick="setStartingBalance()">Set Balance</button>
+      </div>
+      <div style="margin-top: 1rem;">
+        <label for="currency">Currency Symbol:</label>
+        <input type="text" id="currency" value="£" maxlength="3" />
+        <button onclick="setCurrency()">Set Currency</button>
+      </div>
+      <hr>
+      <h3>Set Monthly Budgets</h3>
+      <form id="budget-form">
+        <select id="budget-category"></select>
+        <input type="number" id="budget-amount" placeholder="Budget amount" required />
+        <button type="submit">Set Budget</button>
+      </form>
+    <hr>
+    <h3>Appearance</h3>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <hr>
+    <h3>Backup & Restore</h3>
+    <button onclick="exportData()">Export Data</button>
+    <input type="file" onchange="importData(event)" />
+    <button onclick="exportToCSV()">Export to CSV</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

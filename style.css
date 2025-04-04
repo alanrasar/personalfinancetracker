@@ -1,0 +1,145 @@
+﻿
+:root {
+    --bg: #f4f4f4;
+    --text: #222;
+    --card: #ffffff;
+    --accent: #3b82f6;
+    --border: #ddd;
+  }
+  
+  body.dark {
+    --bg: #1e1e1e;
+    --text: #f0f0f0;
+    --card: #2a2a2a;
+    --accent: #60a5fa;
+    --border: #444;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0 1rem;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .settings-button {
+    background-color: var(--accent) !important;
+    color: white !important;
+    font-weight: bold !important;
+    background-color: #3b82f6; /* Fallback solid color */
+    color: #ffffff; /* Ensure visibility */
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  h1, h2, h3 {
+    margin-top: 1.5rem;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  section {
+    background: var(--card);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  form input, form select, form button {
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  form button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    opacity: 0.9;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+  }
+  
+  th {
+    background: var(--accent);
+    color: white;
+  }
+  
+  button {
+    margin-top: 0.5rem;
+  }
+  
+  input[type="file"] {
+    margin-top: 0.5rem;
+  }
+  
+  #toggle-dark {
+    margin-top: 1rem;
+  }
+  
+  
+  #settings-page {
+    display: none;
+    margin-top: 1rem;
+    border-top: 2px solid #ccc;
+    padding-top: 1rem;
+  }
+  .settings-button {
+    background-color: var(--accent) !important;
+    color: white !important;
+    font-weight: bold !important;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .top-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .form-container, .chart-container {
+    flex: 1;
+    min-width: 350px;
+    margin: 10px;
+  }
+  .chart-container canvas {
+    max-width: 280px;
+    max-height: 280px;
+  }
+  
